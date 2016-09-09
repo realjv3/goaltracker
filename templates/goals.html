@@ -1,0 +1,59 @@
+<?php require 'header.html'; ?>
+
+<div class="main main-raised">
+    <div class="section section-basic">
+        <div class="container">
+            <div class="title">
+                <h2>Goals</h2>
+            </div>
+            <section class="goal_section">
+                <?php if(@$_SESSION['logged_in']): ?>
+                <form method="post" action="/save_goal" enctype="multipart/form-data" id="goal_form">
+                    <div class="input-group">
+                        <label for="goal_form">Goal Name</label>
+                        <input type="text" class="form-control" placeholder="Goal Name..." required id="goal_name" name="goal_name">
+                    </div>
+                    <div class="input-group">
+                        <label for="due_date">Due Date</label>
+                        <input type="date" class="form-control" placeholder="Due Date..." required id="due_date" name="due_date">
+                    </div>
+                    <button type="submit">Save Goal</button>
+                </form>
+                <section id="goals">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Goal</th>
+                            <th>Due Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach($goals as $goal) :?>
+                        <tr>
+                            <td><?=$goal['goal_name']?></td>
+                            <td><?=$goal['due_date']?></td>
+                            <td class="td-actions text-right">
+                                <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                    <i class="fa fa-user"></i>
+                                </button>
+                                <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </section>
+                <?php else: ?>
+                    Please login to track your goals.
+                <?php endif;?>
+            </section>
+        </div>
+    </div>
+</div>
+
+<?php require 'footer.html'; ?>

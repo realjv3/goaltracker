@@ -1,0 +1,22 @@
+CREATE DATABASE goaltracker;
+USE goaltracker;
+CREATE TABLE
+  users
+(
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL
+);
+CREATE TABLE
+  goals
+(
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  goal_name VARCHAR(255) NOT NULL,
+  due_date VARCHAR(255) NOT NULL,
+  KEY (user_id),
+  FOREIGN KEY fk_user_id(user_id)
+  REFERENCES users(id)
+  ON DELETE CASCADE
+);
+

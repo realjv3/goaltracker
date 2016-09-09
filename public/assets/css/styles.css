@@ -1,0 +1,33 @@
+fieldset {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 50rem;
+}
+
+button {
+    margin-top: 5px;
+}
+
+ul.dropdown-menu {
+    width: 230px;
+}
+
+div.form-group {
+    width: 170px;
+}
+
+form#goal_form {
+    display: flex;
+    flex-direction: row;
+    border: solid 1px grey;
+    padding: 50px;
+}
+
+form#goal_form .input-group {
+    margin-right: 10px;
+}
+
+section.goal_section {
+    margin-top: 50px;
+}

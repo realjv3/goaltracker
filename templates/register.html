@@ -1,0 +1,36 @@
+<?php require 'header.html'; ?>
+
+<div class="main main-raised">
+    <div class="section section-basic">
+        <div class="container">
+            <div class="title">
+                <h2>Sign Up</h2>
+            </div>
+            <form method="post" action="/reg_user" enctype="multipart/form-data">
+                <fieldset>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">email</i>
+                        </span>
+                        <input type="email" class="form-control" placeholder="Email..." required id="email" name="email">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock_outline</i>
+                        </span>
+                        <input type="password" placeholder="Password..." class="form-control" id="password" name="password"/>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock_outline</i>
+                        </span>
+                        <input type="password" placeholder="Confirm Password..." class="form-control" id="conf_password" name="conf_password"/>
+                    </div>
+                    <button type="submit">Sign me up!</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<?php require 'footer.html'; ?>
